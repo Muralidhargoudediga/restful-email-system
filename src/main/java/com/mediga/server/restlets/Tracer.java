@@ -1,4 +1,4 @@
-package com.mediga.restlets;
+package com.mediga.server.restlets;
 
 import org.restlet.Context;
 import org.restlet.Request;

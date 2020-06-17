@@ -1,10 +1,11 @@
-package com.mediga;
+package com.mediga.server;
 
-import com.mediga.filters.Blocker;
-import com.mediga.restlets.Tracer;
+import com.mediga.server.filters.Blocker;
+import com.mediga.server.restlets.Tracer;
+import com.mediga.server.resources.RootServerResource;
 import org.restlet.*;
-import org.restlet.data.MediaType;
 import org.restlet.data.Protocol;
+import org.restlet.routing.Router;
 
 public class MailServerApplication extends Application{
 
@@ -23,11 +24,16 @@ public class MailServerApplication extends Application{
 
     @Override
     public Restlet createInboundRoot(){
+        Tracer tracer = new Tracer(getContext());
         Blocker blocker = new Blocker(getContext());
         //blocker.getBlockedAddresses().add("127.0.0.1"); IPV4 format
         //MAC OS is configured by default to use an IPv6 network stack
         blocker.getBlockedAddresses().add("0:0:0:0:0:0:0:1"); // IPV6 format
-        blocker.setNext(new Tracer(getContext()));
-        return blocker;
+        blocker.setNext(tracer);
+
+        Router router = new Router(getContext());
+        router.attach("http://localhost:8111/", RootServerResource.class);
+
+        return router;
     }
 }

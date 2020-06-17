@@ -1,4 +1,4 @@
-package com.mediga.filters;
+package com.mediga.server.filters;
 
 import org.restlet.Context;
 import org.restlet.Request;
