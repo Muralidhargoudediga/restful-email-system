@@ -1,40 +1,19 @@
 package com.mediga.server.resources;
 
-import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
+import org.restlet.resource.Get;
+import org.restlet.resource.Options;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
 
 public class RootServerResource extends ServerResource {
-    public RootServerResource() {
-        setNegotiated(false); //Disable Content Negotiation
-        //setExisting(false);
+
+    @Get("txt")
+    public String represent() throws ResourceException {
+        return "This is the root resource.";
     }
 
-    @Override
-    protected void doInit() throws ResourceException {
-        System.out.println("Root resource was initialized");
-    }
-
-    @Override
-    protected void doCatch(Throwable throwable) {
-        System.out.println("An exception was thrown in the root resource ");
-    }
-
-    @Override
-    protected void doRelease() throws ResourceException {
-        System.out.println("Root resource was released");
-    }
-
-    @Override
-    protected Representation get() throws ResourceException {
-        System.out.println("The GET method of the root resource was invoked");
-        return new StringRepresentation("This is the root resource.");
-    }
-
-    @Override
-    protected Representation options() throws ResourceException {
-        System.out.println("The OPTIONS method of the root resource is invoked");
+    @Options("txt")
+    public String describe() throws ResourceException {
         throw new RuntimeException("Not Yet Implemented");
     }
 }
