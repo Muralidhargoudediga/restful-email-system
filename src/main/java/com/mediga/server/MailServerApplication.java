@@ -1,6 +1,8 @@
 package com.mediga.server;
 
 import com.mediga.server.filters.Blocker;
+import com.mediga.server.resources.AccountServerResource;
+import com.mediga.server.resources.AccountsServerResource;
 import com.mediga.server.restlets.Tracer;
 import com.mediga.server.resources.RootServerResource;
 import org.restlet.*;
@@ -32,7 +34,9 @@ public class MailServerApplication extends Application{
         blocker.setNext(tracer);
 
         Router router = new Router(getContext());
-        router.attach("http://localhost:8111/", RootServerResource.class);
+        router.attach("/", RootServerResource.class);
+        router.attach("/accounts", AccountsServerResource.class);
+        router.attach("/accounts/{accountId}", AccountServerResource.class);
 
         return router;
     }
