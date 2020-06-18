@@ -13,7 +13,7 @@ public class MailServerComponentTest extends TestCase {
 
         Request request = new Request();
         request.setMethod(Method.GET);
-        request.setResourceRef("http://www.rmep.org/accounts/");
+        request.setResourceRef("http://www.rmep.org/accounts");
         request.setHostRef("http://www.rmep.org");
         Response response = new Response(request);
         response.getServerInfo().setAddress("1.2.3.20");

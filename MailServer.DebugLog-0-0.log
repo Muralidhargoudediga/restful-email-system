@@ -1,0 +1,60 @@
+Jun 18, 2020 2:57:46 PM org.restlet.engine.component.HostRoute score
+FINER: Call score for the "org.restlet.routing.VirtualHost@46d83808" host: 1.0
+Jun 18, 2020 2:57:46 PM org.restlet.engine.component.ServerRouter logRoute
+FINE: Default virtual host selected
+Jun 18, 2020 2:57:46 PM org.restlet.engine.component.HostRoute beforeHandle
+FINE: Base URI: "http://www.rmep.org". Remaining part: "/accounts"
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute score
+FINER: Call score for the "" URI pattern: 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.routing.Router logRoute
+FINE: The default route was selected
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute beforeHandle
+FINER: No characters were matched
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute score
+FINER: Call score for the "/" URI pattern: 0.0
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute score
+FINER: Call score for the "/accounts" URI pattern: 1.0
+Jun 18, 2020 2:57:46 PM org.restlet.routing.Router logRoute
+FINE: Selected route: "/accounts" -> Finder for AccountsServerResource
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute beforeHandle
+FINER: 9 characters were matched
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute beforeHandle
+FINE: New base URI: "http://www.rmep.org/accounts". No remaining part to match
+Jun 18, 2020 2:57:46 PM org.restlet.routing.TemplateRoute beforeHandle
+FINER: Delegating the call to the target Restlet
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[application/json]"= 0.04191667
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[application/x-json-smile]"= 0.04191667
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[application/xml]"= 0.04191667
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[text/xml]"= 0.041791666
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[application/x-yaml]"= 0.04191667
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[text/x-yaml]"= 0.041791666
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[text/csv]"= 0.041791666
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreAnnotation
+FINE: Score of annotation "MethodAnnotationInfo [javaMethod: public abstract java.lang.String com.mediga.shared.AccountsResource.represent(), javaClass: class com.mediga.server.resources.AccountsServerResource, restletMethod: GET, input: "txt", value: "txt", output: "txt", query: null]"= 0.5
+Jun 18, 2020 2:57:46 PM org.restlet.engine.application.StrictConneg scoreVariant
+FINE: Total score of variant "[*/*]"= 0.041791666
+Jun 18, 2020 2:57:46 PM org.restlet.service.ConverterService toRepresentation
+FINE: Converter selected for String: DefaultConverter
+Jun 18, 2020 2:57:46 PM org.restlet.resource.ServerResource handle
+FINE: A response with a 200 (Ok) status should have an entity. Changing the status to 204 (No content).
