@@ -3,10 +3,10 @@ package com.mediga.server;
 import com.mediga.server.filters.Blocker;
 import com.mediga.server.resources.AccountServerResource;
 import com.mediga.server.resources.AccountsServerResource;
-import com.mediga.server.restlets.Tracer;
 import com.mediga.server.resources.RootServerResource;
-import org.restlet.*;
-import org.restlet.data.Protocol;
+import com.mediga.server.restlets.Tracer;
+import org.restlet.Application;
+import org.restlet.Restlet;
 import org.restlet.routing.Router;
 
 public class MailServerApplication extends Application{
@@ -18,11 +18,13 @@ public class MailServerApplication extends Application{
         setAuthor("The Restlet Team");
     }
 
+/*
     public static void main(String[] args) throws Exception {
         Server mailServer = new Server(Protocol.HTTP, 8111);
         mailServer.setNext(new MailServerApplication());
         mailServer.start();
     }
+*/
 
     @Override
     public Restlet createInboundRoot(){
