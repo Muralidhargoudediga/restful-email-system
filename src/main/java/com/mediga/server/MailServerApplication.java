@@ -37,7 +37,7 @@ public class MailServerApplication extends Application{
 
         Router router = new Router(getContext());
         router.attach("/", RootServerResource.class);
-        router.attach("/accounts", AccountsServerResource.class);
+        router.attach("/accounts/", AccountsServerResource.class);
         router.attach("/accounts/{accountId}", AccountServerResource.class);
 
         return router;
