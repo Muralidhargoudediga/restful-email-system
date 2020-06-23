@@ -1,6 +1,6 @@
 package com.mediga.server;
 
-import com.mediga.server.resources.MailServerResource;
+import com.mediga.server.resources.MailServerSAXResource;
 import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.Restlet;
@@ -48,7 +48,7 @@ public class MailServerApplication extends Application{
     @Override
     public Restlet createInboundRoot(){
         Router router = new Router(getContext());
-        router.attach("/accounts/{accountId}/mails/{mailId}", MailServerResource.class);
+        router.attach("/accounts/{accountId}/mails/{mailId}", MailServerSAXResource.class);
 
         return router;
     }

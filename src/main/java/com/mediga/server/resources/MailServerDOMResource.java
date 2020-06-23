@@ -12,7 +12,7 @@ import org.w3c.dom.Node;
 
 import java.io.IOException;
 
-public class MailServerResource extends ServerResource {
+public class MailServerDOMResource extends ServerResource {
 
     @Get
     public Representation toXml() throws IOException {
