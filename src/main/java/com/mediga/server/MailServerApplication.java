@@ -1,12 +1,10 @@
 package com.mediga.server;
 
-import com.mediga.server.filters.Blocker;
-import com.mediga.server.resources.AccountServerResource;
-import com.mediga.server.resources.AccountsServerResource;
-import com.mediga.server.resources.RootServerResource;
-import com.mediga.server.restlets.Tracer;
+import com.mediga.server.resources.MailServerResource;
 import org.restlet.Application;
+import org.restlet.Component;
 import org.restlet.Restlet;
+import org.restlet.data.Protocol;
 import org.restlet.routing.Router;
 
 public class MailServerApplication extends Application{
@@ -18,14 +16,16 @@ public class MailServerApplication extends Application{
         setAuthor("The Restlet Team");
     }
 
-/*
+
     public static void main(String[] args) throws Exception {
-        Server mailServer = new Server(Protocol.HTTP, 8111);
-        mailServer.setNext(new MailServerApplication());
+        Component mailServer = new Component();
+        mailServer.getServers().add(Protocol.HTTP, 8111);
+        mailServer.getDefaultHost().attach(new MailServerApplication());
         mailServer.start();
     }
-*/
 
+
+/*
     @Override
     public Restlet createInboundRoot(){
         Tracer tracer = new Tracer(getContext());
@@ -39,6 +39,16 @@ public class MailServerApplication extends Application{
         router.attach("/", RootServerResource.class);
         router.attach("/accounts", AccountsServerResource.class);
         router.attach("/accounts/{accountId}", AccountServerResource.class);
+
+        return router;
+    }
+*/
+
+
+    @Override
+    public Restlet createInboundRoot(){
+        Router router = new Router(getContext());
+        router.attach("/accounts/{accountId}/mails/{mailId}", MailServerResource.class);
 
         return router;
     }
